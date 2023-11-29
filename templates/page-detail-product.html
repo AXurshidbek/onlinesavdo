@@ -40,7 +40,7 @@
 
 <div class="rating-wrap my-3">
 	<ul class="rating-stars">
-		<li style="width:80%" class="stars-active"> 
+		<li style="width:{{ortachasi}}" class="stars-active">
 			<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
 			<i class="fa fa-star"></i> <i class="fa fa-star"></i> 
 			<i class="fa fa-star"></i> 
@@ -51,7 +51,7 @@
 			<i class="fa fa-star"></i> 
 		</li>
 	</ul>
-	<small class="label-rating text-muted">132 reviews</small>
+	<small class="label-rating text-muted">{{mahsulot.izoh_set.count}}</small>
 	<small class="label-rating text-success"> <i class="fa fa-clipboard-check"></i> 154 orders </small>
 </div> <!-- rating-wrap.// -->
 
@@ -185,10 +185,10 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
           <div class="col-sm-10">
-            <p>{{ izoh.matn }}</p>
+            <p>{{ mahsulot.izoh_set.matn }}</p>
              <div class="user d-flex" style="gap: 300px">
-                <p><small class="text-muted">{{ izoh.sana }}</small></p>
-                <p><small class="text-muted">{{ izoh.profil.ism }}</small></p>
+                <p><small class="text-muted">{{ mahsulot.izoh_set.sana }}</small></p>
+                <p><small class="text-muted">{{ mahsulot.izoh_set.profil.ism }}</small></p>
             </div>
           </div>
         </div>
