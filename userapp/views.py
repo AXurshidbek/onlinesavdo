@@ -46,9 +46,8 @@ class RegisterView(View):
         )
         mijoz._send_sms(
             phone_number=profil.tel,
-            message=f"Online do'konga ro'yhatdan o'tish uchun"
-                    f" tasdiqlash ko'dingiz "
-                    f"{profil.tasdiqlash_kodi}"
+            message=f"Online do'kondan ro'yhatdan o'tdingiz "
+                    f"Sizning tasdiqlash kodingiz  {profil.tasdiqlash_kodi}"
         )
         login(request,profil)
         return redirect('/user/tasdiqlash/')

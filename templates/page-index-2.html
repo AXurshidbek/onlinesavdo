@@ -150,27 +150,11 @@
 				</nav> <!--  row end .// -->
 			</div> <!--  dropdown-menu dropdown-large end.// -->
 		</li>
+		  {% for bolim in bolimlar %}
         <li class="nav-item">
-          <a class="nav-link" href="#">Electronics</a>
+          <a class="nav-link" href="/asosiy/bolim/{{bolim.id}}">{{bolim.nom}}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Fashion</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Beauty</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Motors</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sports</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Gardening</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Deals</a>
-        </li>
+        	{% endfor %}
         <li class="nav-item">
           <a class="nav-link" href="#">Under $10</a>
         </li>

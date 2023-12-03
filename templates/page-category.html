@@ -16,10 +16,10 @@
 			  	<img src="{{bolim.rasm.url}}">
 			  </div>
 			  <div class="card-body">
-			    <h4 class="card-title"><a href="#">{{bolim.nom}}</a></h4>
+			    <h4 class="card-title"><a href="/asosiy/bolim/{{bolim.id}}">{{bolim.nom}}</a></h4>
 			    <ul class="list-menu">
 					{% for mahsulot in bolim.mahsulot_set.all|slice:":5" %}
-			    	<li><a href="">{{mahsulot.nom}}</a></li>
+			    	<li><a href="/asosiy/mahsulot/{{mahsulot.id}}">{{mahsulot.nom}}</a></li>
 					{% endfor %}
 			    </ul>
 			  </div>

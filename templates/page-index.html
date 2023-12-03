@@ -14,9 +14,9 @@
 			<h6 class="title-category">BO'LIMLAR <i class="d-md-none icon fa fa-chevron-down"></i></h6>
 			<ul class="menu-category">
 				{% for bolim in bolimlar %}
-				<li><a href="#">{{bolim.nom}}</a></li>
+				<li><a href="/asosiy/bolim/{{bolim.id}}">{{bolim.nom}}</a></li>
 				{% endfor %}
-				<li><a href="#">Hamma bo'limlar</a></li>
+				<li><a href="/asosiy/bolimlar/">Hamma bo'limlar</a></li>
 
 
 			</ul>
