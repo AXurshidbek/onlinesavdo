@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% load mathfilters%}
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content padding-y">
 <div class="container">
@@ -20,38 +21,42 @@
 </tr>
 </thead>
 <tbody>
+{% for item in itemlar %}
 <tr>
+
 	<td>
 		<figure class="itemside">
-			<div class="aside"><img src="{{i.rasm.url}}" class="img-sm"></div>
+			<div class="aside"><img src="{{item.mahsulot.media_set.first.rasm.url}}" class="img-sm"></div>
 			<figcaption class="info">
-				<a href="#" class="title text-dark">Mahsulot nomi</a>
-				<p class="text-muted small">Size: XL, Color: blue, <br> Brand: {{savat.mahsulot.detal.brend}}</p>
+				<a href="/asosiy/mahsulot/{{item.mahsulot.id}}" class="title text-dark">{{item.mahsulot.nom}}</a>
+				<p class="text-muted small">Size: XL, Color: blue, <br> Brand: {{item.mahsulot.brend}}</p>
 			</figcaption>
 		</figure>
 	</td>
 	<td> 
 		<div class="input-group mb-3 input-spinner">
         <div class="input-group-prepend">
-			<a href="/savat_q/{{savat.id}}/"><button class="btn btn-light" type="button" id="button-plus"> + </button></a>
+			<a href="/buyurtma/miqdor_q/{{item.id}}/"><button class="btn btn-light" type="button" id="button-plus"> + </button></a>
         </div>
-        <input type="text" class="form-control" value="3">
+        <input type="text" class="form-control" value="{{item.miqdor}}">
         <div class="input-group-append">
-			<a href="/savat_k/{{savat.id}}/"><button class="btn btn-light" type="button" id="button-minus"> &minus; </button></a>
+			<a href="/buyurtma/miqdor_k/{{item.id}}/"><button class="btn btn-light" type="button" id="button-minus"> &minus; </button></a>
         </div>
         </div>
 	</td>
 	<td> 
 		<div class="price-wrap"> 
-			<var class="price">$69</var>
-			<small  class="text-muted"> $23 each </small>
+			<var class="price">{{item.miqdor|mul:item.mahsulot.narx}} $</var>
+			<small  class="text-muted"> {{item.mahsulot.narx}} $</small>
 		</div> <!-- price-wrap .// -->
 	</td>
 	<td class="text-right"> 
-	<a data-original-title="Save to Wishlist" title="" href="/tanlangan_qosh/{{savat.id}}/" class="btn btn-light" data-toggle="tooltip"> <i class="fa fa-heart"></i></a>
-	<a href="/ochirish/{{savat.id}}/" class="btn btn-light btn-round"> Remove</a>
+	<a data-original-title="Save to Wishlist" title="" href="/buyurtma/tanlangan_qosh/{{item.id}}/" class="btn btn-light" data-toggle="tooltip"> <i class="fa fa-heart"></i></a>
+	<a href="/buyurtma/savat_ochir/{{item.id}}/" class="btn btn-light btn-round"> Remove</a>
 	</td>
+
 </tr>
+{% endfor %}
 </tbody>
 </table>
 
